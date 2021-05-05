@@ -19,32 +19,28 @@ enum EmployeeStatus{
 })
 export class AppComponent {
   
-  constructor(){
-  
-  }
-  ngOnInit(){
-   //console.log(data);
-   //this.Employees.push({data[1].LastName }) 
 
-   //(this.Employees[1].FirstName)
-  // this.http.get('./data.json').subscribe(data => {
-    //this.res = data;
-  //});
- 
+
+  ngOnInit(){
   this.initEmployees();
-  
   }
 
   initEmployees(): void {
-   // for (var i = 0; i<5;i++) {
-      //alert(i);
-      this.Employees.push({"LastName" : data[0].LastName, "FirstName": data[0].FirstName, "Status" : EmployeeStatus[Number(data[0].Status)],"Age": Number(data[0].Age)}) ;
-      this.Employees.push({"LastName" : data[1].LastName, "FirstName": data[1].FirstName, "Status" : EmployeeStatus[Number(data[1].Status)],"Age": Number(data[1].Age)}) ;
+   // debugger;
+    var dataObj =  JSON.stringify(data)
+    const objKeys = Object.keys(dataObj);
+    alert(objKeys);
+    
+    var i = 1;
+   // alert(dataObj[i])
+     
+     // this.Employees.push({"LastName" : data[i].LastName, "FirstName": data[i].FirstName, "Status" : EmployeeStatus[Number(data[i].Status)],"Age": Number(data[i].Age)}) ;
+     // this.Employees.push({"LastName" : dataObj[i].LastName, "FirstName": data[i].FirstName, "Status" : EmployeeStatus[Number(data[i].Status)],"Age": Number(data[1].Age)}) ;
       this.Employees.push({"LastName" : data[2].LastName, "FirstName": data[2].FirstName, "Status" : EmployeeStatus[Number(data[2].Status)],"Age": Number(data[2].Age)}) ;
       this.Employees.push({"LastName" : data[3].LastName, "FirstName": data[3].FirstName, "Status" : EmployeeStatus[Number(data[3].Status)],"Age": Number(data[3].Age)}) ;
       this.Employees.push({"LastName" : data[4].LastName, "FirstName": data[4].FirstName, "Status" : EmployeeStatus[Number(data[4].Status)],"Age": Number(data[4].Age)}) ;
       // }
-   
+   // } 
   }
 
   title = 'MATPASH';
@@ -66,7 +62,6 @@ condition : boolean = true;
 MinAge:number = 0 ;
 MaxAge:number = 0 ;
 Status : EmployeeStatus = 0 ;
-
 
 }
 
